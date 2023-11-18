@@ -1,0 +1,74 @@
+/* CSS for screens larger than 370x660 */
+body {
+    background-color: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+header img {
+    float: left;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#header h1 {
+    color: white;
+    font-size: 30px;
+    margin: 0;
+}
+
+#section1 a, #section2 a {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: green;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 65%;
+    display: block;
+    margin: 20px auto;
+}
+
+#section1 a:hover, #section2 a:hover {
+    background-color: #3e8e41;
+}
+
+/* CSS for screens smaller than 370x660 */
+@media only screen and (max-width: 370px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 5px;
+    }
+
+    header img {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+
+    #header h1 {
+        font-size: 24px;
+    }
+
+    #section1 a, #section2 a {
+        font-size: 18px;
+        padding: 5px 10px;
+        width: 80%;
+        height: 50%;
+    }
+}
+

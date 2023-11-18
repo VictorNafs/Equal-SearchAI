@@ -1,0 +1,65 @@
+body
+{
+background-color: green;
+}
+
+
+
+header {
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header img
+{
+    float: left;
+    background-color: white;
+    padding left: 10px;
+    border-radius: 15px;
+}
+
+#section {
+  background-color: #FFFFFF;
+  padding: 10px;
+}
+
+#article
+{
+  background-color: #FFFFFF;
+  padding: 10px;
+}
+
+
+form {
+    background-color: white;
+    padding: 70px;
+    margin: 0 auto;
+    width: 50%;
+    border: 2px solid green;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input, label {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background: linear-gradient(to right, #4CAF50, #3E8E41);
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background: #3E8E41;
+}
