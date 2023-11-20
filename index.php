@@ -56,13 +56,21 @@ function rechercheGoogle($query, $start = 1) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <link rel="shortcut icon" href="EQEX.ico" type="image/x-icon" />
-    <meta property="og:image" content="EQEX.ico" />
+    <meta property="og:image" content="https://equal-exchange.com/EQEX.png"/>
+
     <meta name="description" content="Explorez une nouvelle dimension de la recherche avec Equal-Exchange – où l'IA rencontre Google. Notre moteur de recherche révolutionnaire analyse vos requêtes avec l'intelligence d'OpenAI pour des résultats Google affinés. Cherchez autrement et découvrez des réponses pertinentes là où les recherches traditionnelles atteignent leurs limites. Rejoignez-nous dans cette aventure novatrice pour une recherche sur Internet plus intuitive et efficace.">
 	<meta name="keywords" content="recherche assistée par IA, optimisation de recherche par IA, moteur de recherche hybride, technologie de recherche avancée, recherche intelligente sur internet, moteur de recherche révolutionnaire, intégration OpenAI Google, recherche web nouvelle génération, système de recherche intuitif, pertinence accrue en recherche web, analyse IA des requêtes, expérience de recherche améliorée, filtrage IA de recherches Google, innovation en recherche web">
     <meta name="author" content="Victor DUPREZ - Equal-Exchange">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6308308780527097"
      crossorigin="anonymous"></script>
+
+    <meta name="twitter:card" content="summary_large_image">    
+    <meta name="twitter:site" content="@iqualexchange">
+    <meta name="twitter:title" content="Equal-Exchange - La recherche innovante">
+    <meta name="twitter:description" content="Découvrez une nouvelle manière de rechercher avec l'intelligence artificielle d'OpenAI et Google.">
+    <meta name="twitter:image" content="https://equal-exchange.com/twitter_large.png">
+
 
     <title>Equal-Exchange</title>
 </head>
@@ -93,7 +101,7 @@ function rechercheGoogle($query, $start = 1) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recherche'])) {
             $recherche = $_POST['recherche'];
             $messages = [
-                ["role" => "system", "content" => "Répondez à la demande de l'utilisateur en utilisant uniquement des mots-clés. En plus de cette réponse, sélectionnez au maximum trois termes pertinents extraits de la requête. Si vous ne connaissez pas de réponse, sélectionnez uniquement des mots-clés de cette requête."],
+                ["role" => "system", "content" => "Répondez à la demande de l'utilisateur en utilisant uniquement des mots-clés. En plus de cette réponse, sélectionnez au maximum trois mots de la requête qui soient des mots-clés. Si vous ne connaissez pas de réponse, sélectionnez uniquement des mots-clés de cette requête."],
                 ["role" => "user", "content" => $recherche]
             ];
 
@@ -126,7 +134,7 @@ function rechercheGoogle($query, $start = 1) {
                         echo "</a>";
                     }
                 } else {
-                    echo "<p>Aucun résultat trouvé ou erreur lors de la recherche Google.</p>";
+                    echo "<p style='color: white;'>Aucun résultat trouvé ou erreur lors de la recherche Google.</p>";
                 }
             } catch(Exception $e) {
                 echo "<p>Une erreur est survenue. Veuillez réessayer plus tard.</p>";
