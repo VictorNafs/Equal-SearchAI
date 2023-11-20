@@ -1,0 +1,67 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+main {
+    flex: 1; /* Permet au main d'occuper tout l'espace disponible */
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h1{
+    color: #fff;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    font-size: 1em;
+}
+
+footer {
+    height: 60px;
+    text-align: center;
+    padding: 20px 0;
+    background: #333;
+    color: #fff;
+}
+
+a {
+    color: #06c;
+}
+
+#backToHome {
+    position: fixed;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none; /* Supprime le soulignement du lien */
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000; /* Assurez-vous que le lien est au-dessus des autres éléments */
+}
+
+#backToHome:hover {
+    background-color: #367c39; /* Changement de couleur au survol */
+}
