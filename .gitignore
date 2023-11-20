@@ -1,3 +1,8 @@
-/mnt/c/wamp64/www/Equal-E/.env
-/mnt/c/wamp64/www/Equal-E/vendor/
+# Ignore the environment file which contains sensitive information
+.env
+
+# Ignore the vendor directory for Composer dependencies
+/vendor/
+
+# Ignore specific verification file for Yandex
 yandex_172a4a4fb9e0b76f.html
