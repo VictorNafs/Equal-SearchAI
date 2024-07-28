@@ -51,6 +51,29 @@ header h1 {
     color: #ccc; /* Couleur de survol pour le lien */
 }
 
+/* Styles pour les boutons de la barre d'onglets */
+.tab button {
+    background-color: #4caf50; /* Choisissez une couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Aucune bordure */
+    padding: 10px 20px; /* Espacement interne */
+    margin: 5px; /* Marge autour des boutons */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en forme de main au survol */
+    font-size: 1em; /* Taille de la police */
+    transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+/* Style au survol des boutons */
+.tab button:hover {
+    background-color: #3e8e41; /* Couleur de fond plus foncée au survol */
+}
+
+/* Style pour le bouton actif (si nécessaire) */
+.tab button.active {
+    background-color: #333; /* Couleur de fond pour le bouton actif */
+}
+
 
 .reponse-openai {
     background-color: #4caf50; /* Vert comme fond */
@@ -65,18 +88,56 @@ header h1 {
     /* Ajoutez ici d'autres styles spécifiques pour le texte, si nécessaire */
 }
 
-section .reponse-openai p {
-    color: white; 
+#textResults .reponse-openai p,
+#imageResults .reponse-openai p {
+    color: white;
 }
 
-
-section {
+#textResults, 
+#imageResults {
     padding: 20px;
-    margin-top: 90px; 
+    margin-top: 50px;
+}
+
+.favicon {
+    width: 24px; /* Augmentation de la largeur */
+    height: 24px; /* Augmentation de la hauteur */
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Masquer les boutons radio originaux */
+input[type="radio"] {
+    display: none;
+}
+
+/* Styles pour les labels des boutons radio */
+.radio-label {
+    display: inline-block;
+    background-color: #4caf50; /* Fond vert */
+    color: white; /* Texte blanc */
+    padding: 5px 15px;
+    border-radius: 15px; /* Coins arrondis */
+    margin: 5px;
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s; /* Transition pour l'effet de survol */
+    margin-bottom: 20px;
+}
+
+/* Changer la couleur de fond au survol */
+.radio-label:hover {
+    background-color: #3e8e41;
+}
+
+/* Styles pour les labels lorsque le bouton radio associé est coché */
+input[type="radio"]:checked + .radio-label {
+    background-color: #333; /* Fond plus foncé */
+    color: white;
 }
 
 /* Styles du formulaire de recherche */
 form {
+    margin-top: 70px;
     display: flex;
     flex-direction: column; /* Empile les éléments verticalement */
     align-items: center; /* Centre les éléments à l'intérieur du formulaire */
@@ -113,14 +174,6 @@ h2 {
     color: #333;
 }
 
-div {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-}
-
 a {
     color: #337ab7;
     text-decoration: none;
@@ -134,18 +187,98 @@ p {
     color: #666;
 }
 
+
 .result-link {
     text-decoration: none;
     color: inherit; /* Assure que les couleurs du texte restent les mêmes */
 }
 
-.result-link:hover div {
+.result-link:hover .resultat-texte {
     background-color: #e9e9e9; /* Ou toute autre couleur de survol que vous préférez */
 }
+
+.resultat-texte {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    text-align: justify; /* Justifier le texte */
+    word-wrap: break-word; /* Gère les débordements de texte */
+    max-width: 100%; /* S'assure que le conteneur ne dépasse pas la largeur de la page */
+}
+
+.grid-container-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    background-color: #e9e9e9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.resultat-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resultat-image img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.pagination a {
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: green;
+}
+
+.pagination a:hover {
+    background-color: #f4f4f4;
+}
+
 
 main {
     flex-grow: 1; /* Permet au contenu principal de remplir l'espace disponible */
     min-height: calc(100vh - 60px);
+}
+
+#introText, #introImage {
+    text-align: center;
+    margin: 60px auto;
+    max-width: 800px; /* Limite la largeur pour une meilleure lisibilité */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Légèrement transparent */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    animation: fadeIn 2s; /* Animation d'apparition */
+}
+
+#introText p {
+    font-size: 1.2em; /* Taille de police plus grande */
+    line-height: 1.6; /* Espacement entre les lignes */
+    color: #333; /* Couleur du texte */
+}
+
+#introImage img {
+    max-width: 100%; /* Assure que l'image ne déborde pas du conteneur */
+    height: auto; /* Garde les proportions de l'image */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Styles pour le footer */
@@ -182,6 +315,7 @@ footer {
 }
 
 
+
 /* Responsive design */
 @media (max-width: 768px) {
 
@@ -194,8 +328,17 @@ footer {
         text-align: center;
         box-shadow: none;
     }
+    .tab {
+        display: flex;
+        justify-content: space-between; /* Place les éléments aux extrémités opposées */
+        padding: 0 10px; /* Ajoutez un peu de padding sur les côtés si nécessaire */
+    }
+
+    .tab button {
+        width: 48%; /* Assure que les boutons ne se touchent pas */
+    }
     input[type="text"], button[type="submit"] {
-        width: calc(100% - 20px); /* 100% de la largeur moins les paddings */
+        width: 80%; /* 100% de la largeur moins les paddings */
         margin-right: 0;
         margin-bottom: 10px;
     }
@@ -203,8 +346,17 @@ footer {
     button[type="submit"] {
         width: calc(100% - 20px); /* Assure que le bouton a la même largeur que le champ de texte */
     }
-
     .pc {
     left: 10px; /* Positionné à droite avec une marge de 10px */
+    }
+    .radio-label {
+        padding: 5px 10px;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+    }
+    .resultat-texte {
+        /* Adaptations pour les écrans plus petits */
+        padding: 10px;
+        max-width: 100%;
     }
 }

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://equal-exchange.com/sitemap.xml
